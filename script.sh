@@ -21,3 +21,9 @@ installDependentPackages(){
     echo Instalando dependências...
     apt-get -qq install unzip wget
 }
+
+downloadSitesFiles(){
+    # Baixando arquivos do site a ser hospedado do repositório do GitHub
+    echo "Baixando arquivos do site..."
+    wget -q -P /tmp https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
+}
