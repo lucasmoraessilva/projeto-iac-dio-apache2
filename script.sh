@@ -9,3 +9,9 @@ updateServer(){
     echo Atualizando pacotes...
     apt-get -qq upgrade
 }
+
+installApache2(){
+    #
+    echo Instalando Apache2
+    apt-get -qq install apache2
+}
