@@ -43,3 +43,25 @@ startApacheProcess(){
     echo "Iniciando processo do Apache2..."
     service apache2 start
 }
+
+main(){
+    # Atualizando lista de pacotes e pacotes possíveis
+    updateServer
+
+    # Instalando Apache2
+    installApache2
+
+    # Instalando dependências para a configuração do script
+    installDependentPackages
+
+    # Baixando arquivos do site através do GitHub
+    downloadFilesOfSite
+
+    # Transferindo arquivos do site para o diretório do Apache2
+    transferFilesToApacheFolder
+
+    # Iniciando processo do Apache2
+    startApacheProcess
+}
+
+main
