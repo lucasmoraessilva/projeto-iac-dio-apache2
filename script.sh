@@ -22,7 +22,7 @@ installDependentPackages(){
     apt-get -qq install unzip wget
 }
 
-downloadSitesFiles(){
+downloadFilesOfSite(){
     # Baixando arquivos do site a ser hospedado do repositório do GitHub
     echo "Baixando arquivos do site..."
     wget -q -P /tmp https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
@@ -36,4 +36,10 @@ transferFilesToApacheFolder(){
     # Movendo arquivos para o diretório de exibição do site
     echo "Movendo arquivos do site para o diretório de exibição..."
     mv /tmp/linux-site-dio-main/* /var/www/html/
+}
+
+startApacheProcess(){
+    # Iniciando processo do Apache2
+    echo "Iniciando processo do Apache2..."
+    service apache2 start
 }
